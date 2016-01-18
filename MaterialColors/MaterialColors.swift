@@ -28,7 +28,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     public convenience init(rgba: UInt) {
         let rgba  = min(rgba, 0xFFFFFFFF)
         let red   = CGFloat((rgba & 0xFF000000) >> 24) / 255.0
@@ -49,13 +49,13 @@ public struct MaterialColor: Hashable {
         return name.hashValue + color.hashValue + textColor.hashValue
     }
     
-    init(name: String, color: UIColor, textColor: UIColor) {
+    internal init(name: String, color: UIColor, textColor: UIColor) {
         self.name = name
         self.color = color
         self.textColor = textColor
     }
     
-    init(name: String, color: UInt, textColor: UInt) {
+    internal init(name: String, color: UInt, textColor: UInt) {
         self.init(name: name, color: UIColor(rgba: color), textColor: UIColor(rgba: textColor))
     }
 }
@@ -100,7 +100,7 @@ public class MaterialColorGroup: Hashable, CollectionType {
         return colors[i]
     }
     
-    init(name: String,
+    internal init(name: String,
         _ P50:  MaterialColor,
         _ P100: MaterialColor,
         _ P200: MaterialColor,
@@ -156,7 +156,7 @@ public class MaterialColorGroupWithAccents: MaterialColorGroup {
         return (colors + accents)[i]
     }
     
-    init(name: String,
+    internal init(name: String,
         _ P50:  MaterialColor,
         _ P100: MaterialColor,
         _ P200: MaterialColor,
