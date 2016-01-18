@@ -49,13 +49,13 @@ public struct MaterialColor: Hashable {
         return name.hashValue + color.hashValue + textColor.hashValue
     }
     
-    private init(name: String, color: UIColor, textColor: UIColor) {
+    init(name: String, color: UIColor, textColor: UIColor) {
         self.name = name
         self.color = color
         self.textColor = textColor
     }
     
-    private init(name: String, color: UInt, textColor: UInt) {
+    init(name: String, color: UInt, textColor: UInt) {
         self.init(name: name, color: UIColor(rgba: color), textColor: UIColor(rgba: textColor))
     }
 }
@@ -100,7 +100,7 @@ public class MaterialColorGroup: Hashable, CollectionType {
         return colors[i]
     }
     
-    private init(name: String,
+    init(name: String,
         _ P50:  MaterialColor,
         _ P100: MaterialColor,
         _ P200: MaterialColor,
@@ -156,7 +156,7 @@ public class MaterialColorGroupWithAccents: MaterialColorGroup {
         return (colors + accents)[i]
     }
     
-    private init(name: String,
+    init(name: String,
         _ P50:  MaterialColor,
         _ P100: MaterialColor,
         _ P200: MaterialColor,
@@ -486,48 +486,98 @@ public struct MaterialColors {
     public static let Black = MaterialColor(name: "Black", color: 0x000000FF, textColor: 0xFFFFFFDE)
     public static let White = MaterialColor(name: "White", color: 0xFFFFFFFF, textColor: 0x000000DE)
     
-    public static let colorGroups: [MaterialColorGroup] = [
-        MaterialColors.Red,
-        MaterialColors.Pink,
-        MaterialColors.Purple,
-        MaterialColors.DeepPurple,
-        MaterialColors.Indigo,
-        MaterialColors.Blue,
-        MaterialColors.LightBlue,
-        MaterialColors.Cyan,
-        MaterialColors.Teal,
-        MaterialColors.Green,
-        MaterialColors.LightGreen,
-        MaterialColors.Lime,
-        MaterialColors.Yellow,
-        MaterialColors.Amber,
-        MaterialColors.Orange,
-        MaterialColors.DeepOrange,
-        MaterialColors.Brown,
-        MaterialColors.Grey,
-        MaterialColors.BlueGrey,
-    ]
+    
     public static let accentedColorGroups: [MaterialColorGroupWithAccents] = [
-        MaterialColors.Red,
-        MaterialColors.Pink,
-        MaterialColors.Purple,
-        MaterialColors.DeepPurple,
-        MaterialColors.Indigo,
-        MaterialColors.Blue,
-        MaterialColors.LightBlue,
-        MaterialColors.Cyan,
-        MaterialColors.Teal,
-        MaterialColors.Green,
-        MaterialColors.LightGreen,
-        MaterialColors.Lime,
-        MaterialColors.Yellow,
-        MaterialColors.Amber,
-        MaterialColors.Orange,
-        MaterialColors.DeepOrange,
+        Red, Pink, Purple, DeepPurple, Indigo, Blue, LightBlue, Cyan, Teal,
+        Green, LightGreen, Lime, Yellow, Amber, Orange, DeepOrange,
     ]
     public static let unaccentedColorGroups: [MaterialColorGroup] = [
-        MaterialColors.Brown,
-        MaterialColors.Grey,
-        MaterialColors.BlueGrey,
+        Brown, Grey, BlueGrey,
+    ]
+    public static let colorGroups: [MaterialColorGroup] = accentedColorGroups + unaccentedColorGroups
+    
+    public static let P50: [MaterialColor] = [
+        Red.P50, Pink.P50, Purple.P50, DeepPurple.P50, Indigo.P50,
+        Blue.P50, LightBlue.P50, Cyan.P50, Teal.P50, Green.P50,
+        LightGreen.P50, Lime.P50, Yellow.P50, Amber.P50, Orange.P50,
+        DeepOrange.P50, Brown.P50, Grey.P50, BlueGrey.P50,
+    ]
+    public static let P100: [MaterialColor] = [
+        Red.P100, Pink.P100, Purple.P100, DeepPurple.P100, Indigo.P100,
+        Blue.P100, LightBlue.P100, Cyan.P100, Teal.P100, Green.P100,
+        LightGreen.P100, Lime.P100, Yellow.P100, Amber.P100, Orange.P100,
+        DeepOrange.P100, Brown.P100, Grey.P100, BlueGrey.P100,
+    ]
+    public static let P200: [MaterialColor] = [
+        Red.P200, Pink.P200, Purple.P200, DeepPurple.P200, Indigo.P200,
+        Blue.P200, LightBlue.P200, Cyan.P200, Teal.P200, Green.P200,
+        LightGreen.P200, Lime.P200, Yellow.P200, Amber.P200, Orange.P200,
+        DeepOrange.P200, Brown.P200, Grey.P200, BlueGrey.P200,
+    ]
+    public static let P300: [MaterialColor] = [
+        Red.P300, Pink.P300, Purple.P300, DeepPurple.P300, Indigo.P300,
+        Blue.P300, LightBlue.P300, Cyan.P300, Teal.P300, Green.P300,
+        LightGreen.P300, Lime.P300, Yellow.P300, Amber.P300, Orange.P300,
+        DeepOrange.P300, Brown.P300, Grey.P300, BlueGrey.P300,
+    ]
+    public static let P400: [MaterialColor] = [
+        Red.P400, Pink.P400, Purple.P400, DeepPurple.P400, Indigo.P400,
+        Blue.P400, LightBlue.P400, Cyan.P400, Teal.P400, Green.P400,
+        LightGreen.P400, Lime.P400, Yellow.P400, Amber.P400, Orange.P400,
+        DeepOrange.P400, Brown.P400, Grey.P400, BlueGrey.P400,
+    ]
+    public static let P500: [MaterialColor] = [
+        Red.P500, Pink.P500, Purple.P500, DeepPurple.P500, Indigo.P500,
+        Blue.P500, LightBlue.P500, Cyan.P500, Teal.P500, Green.P500,
+        LightGreen.P500, Lime.P500, Yellow.P500, Amber.P500, Orange.P500,
+        DeepOrange.P500, Brown.P500, Grey.P500, BlueGrey.P500,
+    ]
+    public static let P600: [MaterialColor] = [
+        Red.P600, Pink.P600, Purple.P600, DeepPurple.P600, Indigo.P600,
+        Blue.P600, LightBlue.P600, Cyan.P600, Teal.P600, Green.P600,
+        LightGreen.P600, Lime.P600, Yellow.P600, Amber.P600, Orange.P600,
+        DeepOrange.P600, Brown.P600, Grey.P600, BlueGrey.P600,
+    ]
+    public static let P700: [MaterialColor] = [
+        Red.P700, Pink.P700, Purple.P700, DeepPurple.P700, Indigo.P700,
+        Blue.P700, LightBlue.P700, Cyan.P700, Teal.P700, Green.P700,
+        LightGreen.P700, Lime.P700, Yellow.P700, Amber.P700, Orange.P700,
+        DeepOrange.P700, Brown.P700, Grey.P700, BlueGrey.P700,
+    ]
+    public static let P800: [MaterialColor] = [
+        Red.P800, Pink.P800, Purple.P800, DeepPurple.P800, Indigo.P800,
+        Blue.P800, LightBlue.P800, Cyan.P800, Teal.P800, Green.P800,
+        LightGreen.P800, Lime.P800, Yellow.P800, Amber.P800, Orange.P800,
+        DeepOrange.P800, Brown.P800, Grey.P800, BlueGrey.P800,
+    ]
+    public static let P900: [MaterialColor] = [
+        Red.P900, Pink.P900, Purple.P900, DeepPurple.P900, Indigo.P900,
+        Blue.P900, LightBlue.P900, Cyan.P900, Teal.P900, Green.P900,
+        LightGreen.P900, Lime.P900, Yellow.P900, Amber.P900, Orange.P900,
+        DeepOrange.P900, Brown.P900, Grey.P900, BlueGrey.P900,
+    ]
+    public static let A100: [MaterialColor] = [
+        Red.A100, Pink.A100, Purple.A100, DeepPurple.A100, Indigo.A100,
+        Blue.A100, LightBlue.A100, Cyan.A100, Teal.A100, Green.A100,
+        LightGreen.A100, Lime.A100, Yellow.A100, Amber.A100, Orange.A100,
+        DeepOrange.A100,
+    ]
+    public static let A200: [MaterialColor] = [
+        Red.A200, Pink.A200, Purple.A200, DeepPurple.A200, Indigo.A200,
+        Blue.A200, LightBlue.A200, Cyan.A200, Teal.A200, Green.A200,
+        LightGreen.A200, Lime.A200, Yellow.A200, Amber.A200, Orange.A200,
+        DeepOrange.A200,
+    ]
+    public static let A400: [MaterialColor] = [
+        Red.A400, Pink.A400, Purple.A400, DeepPurple.A400, Indigo.A400,
+        Blue.A400, LightBlue.A400, Cyan.A400, Teal.A400, Green.A400,
+        LightGreen.A400, Lime.A400, Yellow.A400, Amber.A400, Orange.A400,
+        DeepOrange.A400,
+    ]
+    public static let A700: [MaterialColor] = [
+        Red.A700, Pink.A700, Purple.A700, DeepPurple.A700, Indigo.A700,
+        Blue.A700, LightBlue.A700, Cyan.A700, Teal.A700, Green.A700,
+        LightGreen.A700, Lime.A700, Yellow.A700, Amber.A700, Orange.A700,
+        DeepOrange.A700,
     ]
 }
