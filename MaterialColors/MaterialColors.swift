@@ -486,7 +486,6 @@ public struct MaterialColors {
     public static let Black = MaterialColor(name: "Black", color: 0x000000FF, textColor: 0xFFFFFFDE)
     public static let White = MaterialColor(name: "White", color: 0xFFFFFFFF, textColor: 0x000000DE)
     
-    
     public static let accentedColorGroups: [MaterialColorGroupWithAccents] = [
         Red, Pink, Purple, DeepPurple, Indigo, Blue, LightBlue, Cyan, Teal,
         Green, LightGreen, Lime, Yellow, Amber, Orange, DeepOrange,

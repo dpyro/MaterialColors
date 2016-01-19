@@ -14,10 +14,6 @@
 		E965B0191C4D7F7C00115A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E965B0171C4D7F7C00115A13 /* Main.storyboard */; };
 		E965B01B1C4D7F7C00115A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E965B01A1C4D7F7C00115A13 /* Assets.xcassets */; };
 		E965B01E1C4D7F7C00115A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E965B01C1C4D7F7C00115A13 /* LaunchScreen.storyboard */; };
-		E965B0271C4EC96C00115A13 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E965B0261C4EC96C00115A13 /* LICENSE */; };
-		E965B0281C4EC96C00115A13 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E965B0261C4EC96C00115A13 /* LICENSE */; };
-		E965B02D1C4ECA2500115A13 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E965B02C1C4ECA2500115A13 /* README.md */; };
-		E965B02E1C4ECA2500115A13 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E965B02C1C4ECA2500115A13 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,7 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E965B0271C4EC96C00115A13 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +195,6 @@
 			files = (
 				E965B01E1C4D7F7C00115A13 /* LaunchScreen.storyboard in Resources */,
 				E965B01B1C4D7F7C00115A13 /* Assets.xcassets in Resources */,
-				E965B0281C4EC96C00115A13 /* LICENSE in Resources */,
 				E965B0191C4D7F7C00115A13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E965B02D1C4ECA2500115A13 /* README.md in Sources */,
 				E965B00C1C4D7F0A00115A13 /* MaterialColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E965B02E1C4ECA2500115A13 /* README.md in Sources */,
 				E965B0161C4D7F7C00115A13 /* ViewController.swift in Sources */,
 				E965B0141C4D7F7C00115A13 /* AppDelegate.swift in Sources */,
 			);
