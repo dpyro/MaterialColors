@@ -10,6 +10,7 @@ import UIKit
 import MaterialColors
 
 class ViewController: UITableViewController {
+    let colors: [MaterialColor] = MaterialColors.colorGroups.flatMap { $0.map { $0 } }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,20 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    // MARK: UITableViewController
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colors.count
+    }
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let materialColor = things[indexPath.row]
+        
+        cell.textLabel?.text = materialColor.name
+        cell.textLabel?.textColor = materialColor.textColor
+        cell.backgroundColor = colors[indexPath.row].color
+        
+        return cell
+    }
 }
 
