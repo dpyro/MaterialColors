@@ -29,7 +29,7 @@ class ViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        let materialColor = things[indexPath.row]
+        let materialColor = colors[indexPath.row]
         
         cell.textLabel?.text = materialColor.name
         cell.textLabel?.textColor = materialColor.textColor
