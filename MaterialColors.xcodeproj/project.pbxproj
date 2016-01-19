@@ -30,6 +30,7 @@
 		E965B01F1C4D7F7C00115A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E965B0261C4EC96C00115A13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E965B02C1C4ECA2500115A13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E965B02F1C4ED19300115A13 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 			children = (
 				E965B02C1C4ECA2500115A13 /* README.md */,
 				E965B0261C4EC96C00115A13 /* LICENSE */,
+				E965B02F1C4ED19300115A13 /* screenshot.png */,
 				E965B0021C4D7EF400115A13 /* MaterialColors */,
 				E965B0121C4D7F7C00115A13 /* MaterialColorsExample */,
 				E965B0011C4D7EF400115A13 /* Products */,

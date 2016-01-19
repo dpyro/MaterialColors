@@ -3,6 +3,8 @@ MaterialColors.swift
 
 Everything you need to use the Google Material Design Colors!
 
+![Screenshot](screenshot.png)
+
 ### Usage
 
 Either add MaterialColors.swift to your project or MaterialColors.framework
