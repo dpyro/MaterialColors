@@ -1,6 +1,8 @@
 MaterialColors.swift
 ====================
 
+[![Build Status](https://travis-ci.org/dpyro/MaterialColors.svg?branch=master)](https://travis-ci.org/dpyro/MaterialColors)
+
 Everything you need to use the Google Material Design Colors!
 
 ![Screenshot](screenshot.png)

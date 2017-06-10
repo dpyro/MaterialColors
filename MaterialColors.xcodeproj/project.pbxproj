@@ -31,6 +31,7 @@
 		E965B0261C4EC96C00115A13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E965B02C1C4ECA2500115A13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E965B02F1C4ED19300115A13 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		E97A74951EEC8433007C132F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		E965AFF61C4D7EF400115A13 = {
 			isa = PBXGroup;
 			children = (
+				E97A74951EEC8433007C132F /* .travis.yml */,
 				E965B02C1C4ECA2500115A13 /* README.md */,
 				E965B0261C4EC96C00115A13 /* LICENSE */,
 				E965B02F1C4ED19300115A13 /* screenshot.png */,
