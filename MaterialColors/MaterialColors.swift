@@ -66,38 +66,54 @@ public func ==(lhs: MaterialColor, rhs: MaterialColor) -> Bool {
             lhs.textColor == rhs.textColor
 }
 
-public class MaterialColorGroup: Hashable, CollectionType {
-    public let name: String
-    public let P50:  MaterialColor
-    public let P100: MaterialColor
-    public let P200: MaterialColor
-    public let P300: MaterialColor
-    public let P400: MaterialColor
-    public let P500: MaterialColor
-    public let P600: MaterialColor
-    public let P700: MaterialColor
-    public let P800: MaterialColor
-    public let P900: MaterialColor
+open class MaterialColorGroup: Hashable, Collection {
+
+    open let name: String
+    open let P50:  MaterialColor
+    open let P100: MaterialColor
+    open let P200: MaterialColor
+    open let P300: MaterialColor
+    open let P400: MaterialColor
+    open let P500: MaterialColor
+    open let P600: MaterialColor
+    open let P700: MaterialColor
+    open let P800: MaterialColor
+    open let P900: MaterialColor
     
-    public var colors: [MaterialColor] {
+    open var colors: [MaterialColor] {
         return [P50, P100, P200, P300, P400, P500, P600, P700, P800, P900]
     }
-    public var primaryColor: MaterialColor {
+    open var primaryColor: MaterialColor {
         return P500
     }
     
-    public var hashValue: Int {
+    open var hashValue: Int {
         return name.hashValue + colors.reduce(0) { $0 + $1.hashValue }
     }
     
-    public var startIndex: Int {
+    open var startIndex: Int {
         return 0
     }
-    public var endIndex: Int {
+    open var endIndex: Int {
         return colors.count
     }
-    public subscript(i: Int) -> MaterialColor {
+    open subscript(i: Int) -> MaterialColor {
         return colors[i]
+    }
+    /// Returns the position immediately after the given index.
+    ///
+    /// The successor of an index must be well defined. For an index `i` into a
+    /// collection `c`, calling `c.index(after: i)` returns the same index every
+    /// time.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    open func index(after i: Int) -> Int {
+        if i < self.endIndex {
+            return i+1
+        }
+        return self.endIndex
     }
     
     internal init(name: String,
@@ -125,7 +141,7 @@ public class MaterialColorGroup: Hashable, CollectionType {
         self.P900 = P900
     }
     
-    public func colorForName(name: String) -> MaterialColor? {
+    open func colorForName(_ name: String) -> MaterialColor? {
         return colors.filter { $0.name == name }.first
     }
 }
@@ -135,24 +151,24 @@ public func ==(lhs: MaterialColorGroup, rhs: MaterialColorGroup) -> Bool {
             lhs.colors == rhs.colors
 }
 
-public class MaterialColorGroupWithAccents: MaterialColorGroup {
-    public let A100: MaterialColor
-    public let A200: MaterialColor
-    public let A400: MaterialColor
-    public let A700: MaterialColor
+open class MaterialColorGroupWithAccents: MaterialColorGroup {
+    open let A100: MaterialColor
+    open let A200: MaterialColor
+    open let A400: MaterialColor
+    open let A700: MaterialColor
     
-    public var accents: [MaterialColor] {
+    open var accents: [MaterialColor] {
         return [A100, A200, A400, A700]
     }
     
-    public override var hashValue: Int {
+    open override var hashValue: Int {
         return super.hashValue + accents.reduce(0) { $0 + $1.hashValue }
     }
     
-    public override var endIndex: Int {
+    open override var endIndex: Int {
         return colors.count + accents.count
     }
-    public override subscript(i: Int) -> MaterialColor {
+    open override subscript(i: Int) -> MaterialColor {
         return (colors + accents)[i]
     }
     
@@ -180,7 +196,7 @@ public class MaterialColorGroupWithAccents: MaterialColorGroup {
         super.init(name: name, P50, P100, P200, P300, P400, P500, P600, P700, P800, P900)
     }
     
-    public override func colorForName(name: String) -> MaterialColor? {
+    open override func colorForName(_ name: String) -> MaterialColor? {
         return (colors + accents).filter { $0.name == name}.first
     }
 }
