@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
   s.name         	= "MaterialColors"
-  s.version      	= "1.0.0"
-  s.summary      	= "Implementation of Material Design Colors in Swift 2.1."
+  s.version      	= "2.0.0"
+  s.summary      	= "Implementation of Material Design Colors in Swift 4."
   s.description  	= <<-DESC
   						Everything you need to use the Google Material Design Colors.
   						Includes the various colors in groupings and both 
@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
   s.source       	= { :git => "https://github.com/dpyro/MaterialColors.git", :tag => "#{s.version}" }
   s.source_files  	= "MaterialColors/*.{h,swift}"
   s.requires_arc 	= true
-
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
